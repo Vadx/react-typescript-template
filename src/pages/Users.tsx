@@ -4,6 +4,7 @@ import axios from "axios"
 import List from "../components/List"
 import UserItem from "../components/UserItem"
 import {useHistory} from 'react-router-dom'
+import { Typography } from '@material-ui/core'
 
 const Users:FC = () => {
     const [users, setUsers] = useState<IUser[]>([])
@@ -23,6 +24,8 @@ const Users:FC = () => {
     }
 
     return (
+      <>
+        <Typography variant='h3' gutterBottom>All Users</Typography>
         <List
           items={users}
           renderItem={(user: IUser) =>
@@ -32,7 +35,8 @@ const Users:FC = () => {
                 key={user.id}
             />}
         />
-    );
-};
+      </>
+    )
+}
 
 export default Users

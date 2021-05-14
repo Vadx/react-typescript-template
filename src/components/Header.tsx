@@ -1,18 +1,16 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {NavLink} from 'react-router-dom'
-import { AppBar, Button, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Button, Toolbar, Typography, Box } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     boxShadow: 'none'
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
+  toolBar: {
+    display: 'flex',
+    // flexDirection: 'space-between'
   },
 }))
 
@@ -21,12 +19,14 @@ const Header: React.FC = () => {
 
     return (
         <AppBar position='static' className={classes.root}>
-          <Toolbar>
+          <Toolbar className={classes.toolBar}>
             <Typography variant='h6'>React+TS</Typography>
-            <Button component={NavLink} to="/users">Users</Button>
-            <Button component={NavLink} to='/todos'>
-              Todos
-            </Button>
+            <Box>
+              <Button component={NavLink} to="/users">Users</Button>
+              <Button component={NavLink} to='/todos'>
+                Todos
+              </Button>
+            </Box>
           </Toolbar>
         </AppBar>
     )
