@@ -20,7 +20,7 @@ function App() {
             <Todos />
           </Route>
           <Route path={'/users/:id'}>
-              <UserInfo />
+            <UserInfo />
           </Route>    
         </Box>
       </Container>

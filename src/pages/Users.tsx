@@ -10,28 +10,27 @@ const Users:FC = () => {
     const history = useHistory();
 
     useEffect(() => {
-        fetchUsers()
+      fetchUsers()
     }, [])
 
     async function fetchUsers() {
-        try {
-            const response = await axios.get<IUser[]>('https://jsonplaceholder.typicode.com/users')
-            setUsers(response.data)
-        } catch (e) {
-            alert(e)
-        }
+      try {
+        const response = await axios.get<IUser[]>('https://jsonplaceholder.typicode.com/users')
+        setUsers(response.data)
+      } catch (e) {
+        alert(e)
+      }
     }
 
     return (
         <List
-            items={users}
-            renderItem={(user: IUser) =>
-                <UserItem
-                    onClick={(user) => history.push('/users/' + user.id)}
-                    user={user}
-                    key={user.id}
-                />}
-
+          items={users}
+          renderItem={(user: IUser) =>
+            <UserItem
+                onClick={(user) => history.push('/users/' + user.id)}
+                user={user}
+                key={user.id}
+            />}
         />
     );
 };

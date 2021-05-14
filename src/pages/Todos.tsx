@@ -5,14 +5,11 @@ import TodoItem from "../components/TodoItem"
 import axios from "axios"
 
 const Todos: FC = () => {
-
     const [todos, setTodos] = useState<ITodo[]>([])
 
     useEffect(() => {
         fetchTodos()
     }, [])
-
-
 
     async function fetchTodos() {
         try {
@@ -25,8 +22,8 @@ const Todos: FC = () => {
 
     return (
         <List
-            items={todos}
-            renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id}/>}
+          items={todos}
+          renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id}/>}
         />
     );
 };

@@ -1,3 +1,4 @@
+import { Checkbox, ListItem, ListItemText } from '@material-ui/core';
 import React, {FC} from 'react'
 import {ITodo} from "../types/types"
 
@@ -7,10 +8,12 @@ interface TodoItemProps {
 
 const TodoItem: FC<TodoItemProps> = ({todo}) => {
     return (
-        <div>
-            <input type="checkbox" checked={todo.completed}/>
+        <ListItem>
+          <Checkbox color='primary' checked={todo.completed} />
+          <ListItemText>
             {todo.id}. {todo.title}
-        </div>
+          </ListItemText>
+        </ListItem>
     );
 };
 
