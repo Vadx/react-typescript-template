@@ -6,6 +6,7 @@ import Users from './pages/Users'
 import Todos from './pages/Todos'
 import UserInfo from './pages/UserInfo'
 import { Box } from '@material-ui/core'
+import HomePage from './pages/HomePage'
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       <Header />
       <Container maxWidth="lg">
         <Box mt={5}>
+          <Route path={'/'} exact>
+            <HomePage />
+          </Route>
           <Route path={'/users'} exact>
             <Users />
           </Route>

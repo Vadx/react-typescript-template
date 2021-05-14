@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolBar: {
     display: 'flex',
-    // flexDirection: 'space-between'
+    justifyContent: 'space-between'
   },
 }))
 
@@ -20,8 +20,9 @@ const Header: React.FC = () => {
     return (
         <AppBar position='static' className={classes.root}>
           <Toolbar className={classes.toolBar}>
-            <Typography variant='h6'>React+TS</Typography>
+            <Typography variant='h5'>React+TypeScript</Typography>
             <Box>
+              <Button component={NavLink} to="/">Home</Button>
               <Button component={NavLink} to="/users">Users</Button>
               <Button component={NavLink} to='/todos'>
                 Todos
