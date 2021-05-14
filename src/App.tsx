@@ -1,14 +1,16 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
+import Header from './components/Header'
 
 function App() {
   return (
-    <Container maxWidth="sm">
-      <header>
-        start
-      </header>
-    </Container>
-  );
+    <>
+      <Header />
+      <Container maxWidth="lg">
+         sfdgsdfg sdf gsdfgsdfg 
+      </Container>
+    </>
+  )
 }
 
 export default App
